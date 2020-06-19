@@ -25,6 +25,7 @@ public class App {
 		ImagemAnimada lula= new ImagemAnimada(DIRETORIO+"lula.png");//adiciona a imagem animada no início
 		janela.setImage(lula);
 		
+		lula.vinculateJanela(janela);
 		lula.vinculateButtons(up, right, left, down, random);
 		
 		right.addActionListener(lula);
