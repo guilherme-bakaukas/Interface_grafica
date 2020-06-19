@@ -14,14 +14,15 @@ public class Janela extends JFrame{
 	private static final long serialVersionUID=7686762169698416749L;
 	private JPanel imagePane, controlPane;
 	private ImagemAnimada animada;
-	private JLabel ambiente;
+	private String ambiente;
+	Container principalPane;
 	
 	public Janela(){
         super();
         setDefaultCloseOperation(EXIT_ON_CLOSE);//garante que a janela só fecha quando o usuário clica no exit
         setSize(300,300);
         
-        Container principalPane= getContentPane();//painel principal
+        principalPane= getContentPane();//painel principal
         principalPane.setLayout(new BorderLayout());
         
         imagePane= new JPanel();// painel das imagens
@@ -42,7 +43,7 @@ public class Janela extends JFrame{
 	}
 
 	public void setImage(ImagemAnimada image) {//insere as imagens e às vincula
-		animada=image;//vincula a imagem animada a essa classe
+		this.animada=image;
         imagePane.add(image); 
         SwingUtilities.updateComponentTreeUI(this);
     }
@@ -53,12 +54,12 @@ public class Janela extends JFrame{
 		    JLabel campoImagem = new JLabel(imagem);
 			imagePane.add(campoImagem);
 			}
-	    ImageIcon imagem = new ImageIcon(arquivo);
-	    JLabel campoImagem = new JLabel(imagem);
-		ambiente=campoImagem;//vincula a imagem do ambiente a essa classe
+		ambiente=arquivo;//vincula a referência da imagem a esta classe
+		SwingUtilities.updateComponentTreeUI(this);
 	}
 	
 	public void recreate_cenario(int linha, int coluna) {
 		//ideia é recriar o cenário porém com o objeto animado deslocado
 	}
 }
+

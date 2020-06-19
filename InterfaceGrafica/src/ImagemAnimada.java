@@ -14,7 +14,7 @@ public class ImagemAnimada extends JLabel implements ActionListener {
 	
 	public void actionPerformed(ActionEvent event) {
 		if (event.getSource()==right) {
-			if (coluna<5) {
+			if (coluna<6) {
 				coluna++;
 				janela.recreate_cenario(linha,coluna);
 			}
@@ -36,8 +36,8 @@ public class ImagemAnimada extends JLabel implements ActionListener {
 	public ImagemAnimada(String image) {
 		super(new ImageIcon(image));
 		setSize(20,20);
-		this.linha=0;
-		this.coluna=0;
+		this.linha=1;
+		this.coluna=1;
 	}
 
 	public void vinculateButtons(JButton up,JButton right,JButton left,JButton down,JButton random) {
