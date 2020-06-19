@@ -6,9 +6,7 @@ public class App {
 	
 	public static void main(String[] args) {
 		Janela janela=new Janela();
-		
-		janela.setImage(DIRETORIO+"lula.png", DIRETORIO+"dino.png");
-		
+				
     	JButton right=new JButton("right");
     	janela.setButton(right);
     	
@@ -23,8 +21,19 @@ public class App {
     	
     	JButton random=new JButton("random");
     	janela.setButton(random);
-		
     	
+		ImagemAnimada lula= new ImagemAnimada(DIRETORIO+"lula.png");//adiciona a imagem animada no início
+		janela.setImage(lula);
+		
+		lula.vinculateButtons(up, right, left, down, random);
+		
+		right.addActionListener(lula);
+		left.addActionListener(lula);
+		up.addActionListener(lula);
+		down.addActionListener(lula);
+		random.addActionListener(lula);
+		
+		janela.setAmbiente(DIRETORIO+"dino.png");//cria o ambiente inicial
     	
 	}
 

@@ -39,20 +39,16 @@ public class Janela extends JFrame{
     	SwingUtilities.updateComponentTreeUI(this);
 	}
 
-	public void setImage(String arquivo, String arquivo1) {//insere as imagens
-
-        ImageIcon image= new ImageIcon(arquivo);
-        JLabel space_image= new JLabel(image);
-        imagePane.add(space_image); 
-       
-        
-        for (int i=0;i<35;i++) {
-            ImageIcon image1= new ImageIcon(arquivo1);
-            JLabel space_image1= new JLabel(image1);
-        	imagePane.add(space_image1);
-        }
-        
+	public void setImage(ImagemAnimada image) {//insere as imagens
+        imagePane.add(image); 
         SwingUtilities.updateComponentTreeUI(this);
-
     }
+	
+	public void setAmbiente(String arquivo) {
+		for (int i=0;i<35;i++) {
+		    ImageIcon imagem = new ImageIcon(arquivo);
+		    JLabel campoImagem = new JLabel(imagem);
+			imagePane.add(campoImagem);
+			}
+	}
 }
