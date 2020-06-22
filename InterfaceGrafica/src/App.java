@@ -6,12 +6,13 @@ public class App {
 	
 	public static void main(String[] args) {
 		Janela janela=new Janela();
-				
-    	JButton right=new JButton("right");
-    	janela.setButton(right);
-    	
+
+
     	JButton left=new JButton("left");
     	janela.setButton(left);
+
+		JButton right=new JButton("right");
+		janela.setButton(right);
     	
     	JButton up=new JButton("up");
     	janela.setButton(up);
@@ -22,7 +23,7 @@ public class App {
     	JButton random=new JButton("random");
     	janela.setButton(random);
     	
-		ImagemAnimada lula= new ImagemAnimada(DIRETORIO+"lula.png");//adiciona a imagem animada no início
+		ImagemAnimada lula= new ImagemAnimada(DIRETORIO+"Char.png");//adiciona a imagem animada no início
 		janela.setImage(lula);
 		
 		lula.vinculateJanela(janela);
@@ -34,7 +35,7 @@ public class App {
 		down.addActionListener(lula);
 		random.addActionListener(lula);
 		
-		janela.setAmbiente(DIRETORIO+"dino.png");//cria o ambiente inicial
+		janela.setAmbiente(DIRETORIO+"Frame1.png");//cria o ambiente inicial
     	
 	}
 
